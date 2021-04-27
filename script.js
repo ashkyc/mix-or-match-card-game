@@ -5,7 +5,7 @@ class AudioController {
     this.matchSound = new Audio("Assets/Assets_Audio_match.wav");
     this.victorySound = new Audio("Assets/Assets_Audio_victory.wav");
     this.gameOverSound = new Audio("Assets/Assets_Audio_gameOver.wav");
-    this.bgMusic.volume = 0.5;
+    this.bgMusic.volume = 0.4;
     this.bgMusic.loop = true;
   }
 
@@ -138,9 +138,11 @@ class MixOrMatch {
   cardMatch(card1, card2) {
     this.matchedCards.push(card1);
     this.matchedCards.push(card2);
-    this.audioController.match();
     card1.classList.add("matched");
     card2.classList.add("matched");
+    setTimeout(() => {
+      this.audioController.match();
+    }, 500);
 
     if (this.matchedCards.length === this.cardsArray.length) {
       this.victory();

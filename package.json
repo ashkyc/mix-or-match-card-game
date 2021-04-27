@@ -1,0 +1,19 @@
+{
+  "name": "card_matching_game",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashkyc/mix-or-match-card-game.git"
+  },
+  "author": "Ashley Man",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ashkyc/mix-or-match-card-game/issues"
+  },
+  "homepage": "https://github.com/ashkyc/mix-or-match-card-game#readme"
+}

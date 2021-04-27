@@ -10,6 +10,8 @@ html {
 body {
   margin: 0;
   background: radial-gradient(#9d5900, #3d2200);
+  width: 100vw;
+  height: 100vh;
 }
 
 .page-title {
@@ -33,6 +35,8 @@ body {
   font-family: "Creepster", cursive;
   font-size: 50px;
   display: none;
+  width: 100vw;
+  height: 100vh;
 }
 
 .overlay-text-small {
@@ -199,4 +203,36 @@ body {
 
 .card-back:hover .spider {
   transform: translateY(0);
+}
+
+@media (max-width: 600px) {
+  .overlay-text.visible {
+    animation: overlay-grow-mobile 500ms forwards;
+  }
+
+  @keyframe overlay-grow-mobile {
+    from {
+      background-color: rgba(0, 0, 0, 0);
+      font-size: 0;
+    }
+
+    to {
+      background-color: rgba(0, 0, 0, 0.8);
+      font-size: 50px;
+    }
+  }
+
+  .page-title {
+    font-size: 50px;
+  }
+  .game-info {
+    font-size: 24px;
+  }
+
+  .game-container {
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    perspective: 200px;
+  }
 }
