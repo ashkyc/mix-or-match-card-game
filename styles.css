@@ -12,6 +12,7 @@ body {
   background: radial-gradient(#9d5900, #3d2200);
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
 }
 
 .page-title {
@@ -62,10 +63,10 @@ body {
 }
 
 .game-container {
-  padding: 0 150px;
   perspective: 500px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 .game-info-container {
@@ -92,6 +93,7 @@ body {
   height: 175px;
   width: 125px;
   position: relative;
+  display: flex;
 }
 
 .card:hover {
@@ -162,8 +164,8 @@ body {
 
 .cob-web {
   position: absolute;
-  width: 47px;
-  height: 47px;
+  max-width: 47px;
+  max-height: 47px;
   transition: width 100ms ease-in-out, height 100ms ease-in-out;
 }
 
@@ -205,21 +207,15 @@ body {
   transform: translateY(0);
 }
 
+@media (max-width: 769px) {
+  .page-title {
+    font-size: 75px;
+  }
+}
+
 @media (max-width: 600px) {
   .overlay-text.visible {
     animation: overlay-grow-mobile 500ms forwards;
-  }
-
-  @keyframe overlay-grow-mobile {
-    from {
-      background-color: rgba(0, 0, 0, 0);
-      font-size: 0;
-    }
-
-    to {
-      background-color: rgba(0, 0, 0, 0.8);
-      font-size: 50px;
-    }
   }
 
   .page-title {
@@ -234,5 +230,48 @@ body {
     width: 100vw;
     height: 100vh;
     perspective: 200px;
+  }
+
+  .cards-container {
+    width: 100vw;
+    padding: 20px 10px 20px 30px;
+    margin: 0 auto;
+  }
+
+  .card {
+    width: 70px;
+    height: 100px;
+  }
+
+  .cob-web {
+    width: 25px;
+    height: 25px;
+  }
+
+  .spider {
+    width: 50px;
+    transform: translateY(-5px);
+  }
+
+  .card-face:hover .cob-web {
+    width: 30px;
+    height: 30px;
+  }
+
+  .card-value {
+    transition: none;
+    width: 50px;
+  }
+}
+
+@keyframes overlay-grow-mobile {
+  from {
+    background-color: rgba(0, 0, 0, 0);
+    font-size: 0;
+  }
+
+  to {
+    background-color: rgba(0, 0, 0, 0.8);
+    font-size: 50px;
   }
 }
